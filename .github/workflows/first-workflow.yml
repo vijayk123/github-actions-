@@ -1,40 +1,23 @@
-
-name: JOB OUTPUT DEMO
+name: Job output Demo
 
 on:
   push:
     branches:
       - main
-
 jobs:
   build:
     runs-on: ubuntu-latest
     outputs:
-      version: ${{ steps.set_version.outputs.version }}
+      version: ${{ steps.set_version.outputs.version}}
 
     steps:
-      - name: Set Version
+      - name: SET Version
         id: set_version
-        run: echo "version=1.0.${{ github.run_number }}" >> $GITHUB_OUTPUT
-
-  #  steps: 
-   #   - name: Set Version
-   #     id: set_version
-   #     run: echo "version=1.0.${{ github.run_number }}" >> $GITHUB_OUTPUT
-
-
-
+        run: echo "version=1.0.${{github.run_number}}" >> $GITHUB_OUTPUT
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Use Version
-        run: echo "Deploying version ${{ needs.build.outputs.version }}"
-
-        #uses: actions/checkout@v4
-      
-     # - name: show files
-      #  run: ls -la
-      #  run: echo "Hi There, GitHub Actions is working"
-
+      - name: Use version
+        run: echo "Deploying version ${{needs.build.outputs.version}}"
