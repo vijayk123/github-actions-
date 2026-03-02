@@ -13,7 +13,7 @@ jobs:
       - name: Build Step
         run: |
           echo "Building Job1"
-          sleep 20
+          sleep 5
           echo "Build Finished"
 
   test:
@@ -23,7 +23,7 @@ jobs:
       - name: Test Step
         run: |
           echo "Running tests"
-          sleep 10
+          sleep 3
           echo "Tests finished"
         
   deploy:
@@ -33,7 +33,7 @@ jobs:
       - name: Deploy Step
         run: |
           echo "Deploying application"
-          sleep 5
+          sleep 2
           echo "Deployment Done"
 
         #uses: actions/checkout@v4
