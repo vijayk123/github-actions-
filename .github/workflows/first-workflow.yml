@@ -8,9 +8,9 @@ on:
 
 jobs:
   steps:
-    - name: Set Version
-      id: set_version
-      run: echo "version=1.0.${{ github.run_number }}" >> $GITHUB_OUTPUT
+   - name: Set Version
+     id: set_version
+     run: echo "version=1.0.${{ github.run_number }}" >> $GITHUB_OUTPUT
 
   build:
     runs-on: ubuntu-latest
