@@ -10,7 +10,7 @@ jobs:
         runs-on: ubuntu-latest
         
         env:
-            APP_NAME: my-app
+            APP_NAME: my-appp
             VERSION: 1.0
         
         steps:
