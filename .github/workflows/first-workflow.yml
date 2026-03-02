@@ -34,7 +34,7 @@ jobs:
         run: |
           echo "Deploying application"
           sleep 5
-          echo "Deployment Done
+          echo "Deployment Done"
 
         #uses: actions/checkout@v4
       
