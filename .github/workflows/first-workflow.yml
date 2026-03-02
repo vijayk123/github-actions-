@@ -1,5 +1,5 @@
 
-name: My first workflow
+name: demo of parellel jobs
 
 on:
   push:
@@ -7,14 +7,27 @@ on:
       - main
 
 jobs:
-  build:
+  job1:
     runs-on: ubuntu-latest
+    steps: 
+      - name: job1 setup
+        run: |
+          echo "Starting Job1"
+          sleep 10
+          echo "Job 1 Finished"
 
+  job2:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - name: job2 setup
+        run: |
+          echo "starting job2"
+          sleep 5
+          echo "job2 finished"
+        
+        #uses: actions/checkout@v4
       
-      - name: show files
-        run: ls -la
+     # - name: show files
+      #  run: ls -la
       #  run: echo "Hi There, GitHub Actions is working"
 
