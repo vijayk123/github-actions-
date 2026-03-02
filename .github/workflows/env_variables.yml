@@ -2,8 +2,10 @@ name: Env variables demo
 
 on:
     push:
-        paths:
-            - '.github/workflows/env_variables.yml'
+      branches:
+        - main
+      paths:
+        - '.github/workflows/env_variables.yml'
 
 jobs:
     demo:
