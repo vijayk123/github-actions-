@@ -1,4 +1,4 @@
-
+i
 name: My first workflow
 
 on:
@@ -11,5 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print Hello message
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: shpw files
+        run ls -la
         run: echo "Hi There, GitHub Actions is working"
