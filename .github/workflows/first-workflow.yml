@@ -6,16 +6,16 @@ on:
     branches:
       - main
 
-jobs:
-  steps:
-   - name: Set Version
-     id: set_version
-     run: echo "version=1.0.${{ github.run_number }}" >> $GITHUB_OUTPUT
-
+  jobs:
   build:
     runs-on: ubuntu-latest
-    outputs: 
+    outputs:
       version: ${{ steps.set_version.outputs.version }}
+
+    steps:
+      - name: Set Version
+        id: set_version
+        run: echo "version=1.0.${{ github.run_number }}" >> $GITHUB_OUTPUT
 
   #  steps: 
    #   - name: Set Version
