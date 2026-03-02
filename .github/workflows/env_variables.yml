@@ -18,8 +18,6 @@ jobs:
               run: |
                echo "APP_NAME is ${{env.APP_NAME}}
                echo "VERSION is ${{env.VERSION}}
-        
-        steps:
             - name: Use Secret
               run: |
                 echo "SECRET_KEY is ${{secrets.MY_SECRET}}
