@@ -1,5 +1,4 @@
 name: Job output Demo
-
 on:
   push:
     branches:
@@ -21,3 +20,12 @@ jobs:
     steps:
       - name: Use version
         run: echo "Deploying version ${{needs.build.outputs.version}}"
+
+      - name: Print GitHub Context Info
+        run: |
+         echo "Repository: ${{ github.repository }}"
+         echo "Actor: ${{ github.actor }}"
+         echo "Commit SHA: ${{ github.sha }}"
+         echo "Branch Ref: ${{ github.ref }}"
+         echo "Run ID: ${{ github.run_id }}"
+         echo "Run Number: ${{ github.run_number }}"
