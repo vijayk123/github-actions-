@@ -18,4 +18,4 @@ jobs:
         if:
             github.ref == 'refs/heads/main'
         steps:
-            - run: echo "Deploying only if it is main branch"
+            - run: echo "Deploying only if it is a main branch"
