@@ -7,6 +7,6 @@ on:
 
 jobs:
   call-build:
-    uses: ./.github/workflows/reusable-build.yml
+    uses: ./.github/workflows/reusable_workflow.yml
     with:
       app_name: my-service
