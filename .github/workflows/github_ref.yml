@@ -1,0 +1,21 @@
+name: Conditonal deploy
+
+on:
+    push:
+      branches:
+        - main
+        - dev
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - run: |
+                echo "Hello World.."
+    deploy:
+        runs-on: ubuntu-latest
+        needs: build
+        if:
+            github.ref == 'refs/heads/main'
+        steps:
+            -run: echo "Deploying to main branch"
