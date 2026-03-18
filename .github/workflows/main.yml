@@ -1,11 +1,12 @@
-name: Main pipeline
+name: Main Pipeline
+
 on:
-   push:
-     branches:
-       - main
+  push:
+    branches:
+      - main
 
 jobs:
   call-build:
-    uses: ./.github/workflows/reusable_workflow.yml
+    uses: ./.github/workflows/reusable-build.yml
     with:
-      app_name: my-app
+      app_name: my-service
