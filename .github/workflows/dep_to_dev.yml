@@ -1,4 +1,4 @@
-name: Conditonal deploy
+name: conditional deploy
 
 on:
     push:
@@ -18,4 +18,4 @@ jobs:
         if:
             github.ref == 'refs/heads/main'
         steps:
-            -run: echo "Deploying to main branch"
+            - run: echo "Deploying only if it is main branch"
